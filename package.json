@@ -1,0 +1,60 @@
+{
+  "name": "pascalcoin-token-poc",
+  "version": "0.0.12",
+  "description": "Token implementation on top of pascalcoin.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "PascalCoin",
+    "BlockChain",
+    "Cryptography"
+  ],
+  "author": "Benjamin Ansbach <benjaminansbach@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --env dev && webpack --env build && npm run test",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "mocha --timeout 15000 --recursive --require @babel/register --require @babel/polyfill --colors \"./test/**/*.spec.js\"",
+    "test:cover": "cross-env NODE_ENV=test nyc --reporter=html mocha --recursive --require @babel/register --require @babel/polyfill --colors \"./test/**/*.spec.js\""
+  },
+  "dependencies": {
+    "@pascalcoin-sbx/common": "^0.0.13",
+    "@pascalcoin-sbx/crypto": "^0.0.13",
+    "@pascalcoin-sbx/data-spec": "^0.0.13",
+    "@pascalcoin-sbx/json-rpc": "^0.0.13",
+    "@pascalcoin-sbx/signing": "^0.0.13",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^8.0.0-beta.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-istanbul": "^5.1.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "jsdom": "11.11.0",
+    "jsdom-global": "3.0.2",
+    "lerna": "^3.13.1",
+    "mocha": "^4.0.1",
+    "nyc": "^13.1.0",
+    "regenerator": "^0.13.3",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.12.2",
+    "webpack-cli": "^3.0.8",
+    "webpack-node-externals": "^1.7.2",
+    "yargs": "^10.0.3"
+  }
+}
